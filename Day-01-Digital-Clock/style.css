@@ -1,0 +1,63 @@
+body {
+    background: radial-gradient(circle at center, #020617, #000);
+    font-family: 'Courier New', monospace;
+}
+
+/* Clock container */
+.clock-ui {
+    width: 355px !important;
+    padding: 25px 35px;
+    border-radius: 20px;
+    background: #0f172a;
+    box-shadow: 
+        0 0 25px rgba(0, 255, 255, 0.2),
+        inset 0 0 15px rgba(0, 255, 255, 0.1);
+    border: 2px solid rgba(0, 255, 255, 0.25);
+    min-width: 320px;
+}
+
+.title {
+    font-weight: 600;
+    color: #a8b2c0;
+}
+
+/* Time display */
+.time-text {
+    font-size: 3rem;
+    color: #00ffff;
+    letter-spacing: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 
+        0 0 5px #00ffff,
+        0 0 15px #00ffff,
+        0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+/* Blinking colon */
+.colon {
+    animation: blink 2s infinite;
+}
+
+/* AM/PM */
+.ampm {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #38bdf8;
+    letter-spacing: 2px;
+}
+
+/* Date */
+.date-text {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Blink animation */
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
