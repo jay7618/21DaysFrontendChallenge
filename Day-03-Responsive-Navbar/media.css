@@ -1,0 +1,43 @@
+
+@media (min-width: 576px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+}
+
+@media (min-width: 992px) {
+    body {
+        font-size: 19px;
+    }
+    .start-btn button {
+        display: block !important;
+    }
+    .nav-links ul {
+        gap: 40px !important;
+    }
+    .start-btn,.nav-links {
+        display: block !important;
+    }
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+  body {
+    font-size: 21px;
+  }
+}
