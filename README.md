@@ -37,8 +37,8 @@ Each day's folder contains:
 3. Open `index.html` in browser
 
 ## 📱 Connect With Me
-[Your LinkedIn]
-[Your Portfolio]
+https://www.linkedin.com/in/jay7618
+https://portfolio-bt-teal.vercel.app/
 
 ## 🙏 Credits
 **Guidance:** @Keyur Gohil  
