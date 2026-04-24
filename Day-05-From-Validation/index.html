@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-3">Form Validation</h1>
+        <div class="form-section">
+            <form action="">
+                <label for="fname">First Name : </label>
+                <input type="text" class="fname form-control mb-4" id="fname">
+                <label for="lname">Last Name : </label>
+                <input type="text" class="lname form-control mb-4" id="lname">
+                <label for="email">Email : </label>
+                <input type="email" class="email form-control mb-4" id="email">
+                <label for="number">Phone Number : </label>
+                <input type="tel" class="number form-control mb-4" id="number">
+                <label for="pass">Password : </label>
+                <input type="password" class="pass form-control mb-4" id="pass">
+                <label for="passf">Confirm Password : </label>
+                <input type="password" class="passf form-control mb-4" id="passf">
+                <div class="submit-btn text-center">
+                    <button id="submit-btn" class="btn btn-primary">Register</button>
+                    <p>Already have account ? <span><a href="./login.html">Click here</a></span> </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
