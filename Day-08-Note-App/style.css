@@ -1,0 +1,162 @@
+/* Body */
+body {
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Notes Grid */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 100px; /* space for floating button */
+}
+
+/* Note Cards */
+.note-card {
+    padding: 15px 18px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.3s;
+    cursor: grab;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px; /* fixed height */
+    overflow: hidden;
+}
+
+.note-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Note Text */
+.note-card div:first-child {
+    overflow-y: auto;
+    max-height: 120px; /* scrollable if text is long */
+    padding-right: 5px;
+}
+
+/* Timestamp */
+.note-time {
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Action Buttons */
+.note-actions {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    display: flex;
+    gap: 6px;
+}
+
+.note-actions button {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.note-actions button:hover {
+    transform: scale(1.2);
+}
+
+/* Specific Colors */
+.note-actions button.edit-btn {
+    color: #ffffff;
+    background-color: #28a745; /* green */
+}
+
+.note-actions button.delete-btn {
+    color: #ffffff;
+    background-color: #dc3545; /* red */
+}
+
+/* Floating Add Button */
+#addNoteBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+#addNoteBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* Colorful Note Cards */
+.note-card.color-0 { background: linear-gradient(135deg, #ffecd2, #fcb69f); color: #333; }
+.note-card.color-1 { background: linear-gradient(135deg, #cfd9df, #e2ebf0); color: #1a1a1a; }
+.note-card.color-2 { background: linear-gradient(135deg, #fddb92, #d1fdff); color: #1a1a1a; }
+.note-card.color-3 { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); color: #1a1a1a; }
+.note-card.color-4 { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); color: #1a1a1a; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Edit Button */
+#editNote {
+    color: #ffffff;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#editNote:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Delete Button */
+#deleteNote {
+    color: #ffffff;
+    background-color: #dc3545; /* red */
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#deleteNote:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
