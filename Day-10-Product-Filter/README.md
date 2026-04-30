@@ -25,14 +25,6 @@ NebulaStore is a modern, interactive product filtering UI that allows users to s
 - Google Fonts (Inter)
 - Debouncing Technique
 
-## 🚀 Live Demo
-[Add Netlify/Vercel link after deployment]
-
-## 📸 Screenshot
-![NebulaStore Product Filter](./screenshot.png)
-
-## 🧠 Flow Planning
-See [flow.md](./flow.md)
 
 ## 🔄 How It Works
 
