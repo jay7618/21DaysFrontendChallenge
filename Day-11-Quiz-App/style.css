@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #f5e6d3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Subtle paper texture background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(#d4a574 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.quiz-container {
+    max-width: 800px;
+    width: 100%;
+    background: #fffef7;
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+/* Header - completely removed styling, just container */
+.header {
+    padding: 0;
+    background: none;
+    border-bottom: none;
+    display: none;
+}
+
+.header h2, .header p {
+    display: none;
+}
+
+/* User Info - Clean minimal */
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    background: #e8dcc8;
+    border-bottom: 1px solid #d4c5a9;
+}
+
+.user-info span:first-child {
+    color: #2c3e2f;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.user-info span:last-child {
+    background: #2c3e2f;
+    padding: 5px 18px;
+    border-radius: 30px;
+    color: #f5e6d3;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Timer - Only live timer, no extra text */
+.timer {
+    text-align: center;
+    padding: 25px 20px;
+    background: #f5e6d3;
+}
+
+.timer span {
+    font-size: 52px;
+    font-weight: 800;
+    color: #2c3e2f;
+    background: #fffef7;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 60px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Remove the clock icon and "sec" text */
+.timer::before {
+    display: none;
+}
+
+/* Progress */
+.progress {
+    padding: 16px 28px 0 28px;
+    color: #8b7355;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Question */
+.question {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e2f;
+    margin: 8px 28px 20px 28px;
+    line-height: 1.45;
+    padding: 8px 0;
+}
+
+/* Options Container - 2x2 GRID LAYOUT */
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 28px 30px 28px;
+}
+
+.option {
+    padding: 18px 16px;
+    background: #f0ebe0;
+    border: 2px solid #d4c5a9;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2c3e2f;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.option:hover:not(.disabled) {
+    background: #e8dcc8;
+    border-color: #c4a76c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+/* Option prefix styling */
+.option::before {
+    content: attr(data-letter);
+    font-weight: 800;
+    color: #e8b56e;
+    font-size: 18px;
+}
+
+/* Correct Answer */
+.option.correct {
+    background: #d4e2d0;
+    border-color: #6b8c5c;
+    color: #2c4a2e;
+}
+
+.option.correct::before {
+    content: '✓';
+    color: #6b8c5c;
+}
+
+/* Wrong Answer */
+.option.wrong {
+    background: #e8cfcf;
+    border-color: #c96a6a;
+    color: #8b3a3a;
+}
+
+.option.wrong::before {
+    content: '✗';
+    color: #c96a6a;
+}
+
+/* Disabled */
+.disabled {
+    cursor: default;
+    opacity: 0.8;
+    transform: none !important;
+}
+
+/* Next Button */
+.next-btn {
+    width: calc(100% - 56px);
+    margin: 10px 28px 35px 28px;
+    padding: 16px;
+    background: #e8b56e;
+    color: #2c3e2f;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.next-btn:hover:not(:disabled) {
+    background: #dba450;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.next-btn:disabled {
+    background: #d4c5a9;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Start Screen - Header hidden */
+.start-screen, .result-screen {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.start-screen input {
+    width: calc(100% - 40px);
+    padding: 16px 24px;
+    margin: 30px 20px;
+    background: #f0ebe0;
+    border: 2px solid #d4c5a9;
+    border-radius: 60px;
+    font-size: 16px;
+    color: #2c3e2f;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.start-screen input:focus {
+    border-color: #e8b56e;
+    background: #fffef7;
+}
+
+.start-screen button, .result-screen button {
+    padding: 14px 42px;
+    background: #e8b56e;
+    color: #2c3e2f;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 15px 0;
+}
+
+.start-screen button:hover, .result-screen button:hover {
+    background: #dba450;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+/* Result Screen */
+.result-screen {
+    padding: 50px 30px;
+}
+
+.result-screen .score {
+    font-size: 70px;
+    font-weight: 800;
+    color: #e8b56e;
+    margin: 20px 0;
+    text-shadow: none;
+}
+
+.result-screen p {
+    font-size: 16px;
+    color: #8b7355;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+/* Hidden utility */
+.hidden {
+    display: none;
+}
+
+/* Remove header text from result screen */
+.result-screen .header h2 {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 550px) {
+    .options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 15px 20px 25px 20px;
+    }
+    
+    .quiz-container {
+        border-radius: 24px;
+    }
+    
+    .question {
+        font-size: 18px;
+        margin: 8px 20px 18px 20px;
+    }
+    
+    .option {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+    
+    .next-btn {
+        width: calc(100% - 40px);
+        margin: 10px 20px 30px 20px;
+        padding: 14px;
+    }
+    
+    .timer span {
+        font-size: 42px;
+        padding: 10px 28px;
+    }
+    
+    .user-info {
+        padding: 12px 20px;
+    }
+    
+    .result-screen .score {
+        font-size: 55px;
+    }
+}
+
+/* Animation for options */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.option {
+    animation: fadeSlide 0.25s ease forwards;
+}
+
+.option:nth-child(1) { animation-delay: 0s; }
+.option:nth-child(2) { animation-delay: 0.05s; }
+.option:nth-child(3) { animation-delay: 0.1s; }
+.option:nth-child(4) { animation-delay: 0.15s; }
