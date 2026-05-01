@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Password Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>🔐 Password Maker</h1>
+
+        <div class="password-area">
+            <div class="password-text" id="generatedPass">Click Generate</div>
+            <button class="copy-button" id="copyPassBtn">
+                📋 Copy
+            </button>
+        </div>
+
+        <div class="options-list">
+            <label class="option-row">
+                <input type="checkbox" id="includeUppercase" checked>
+                <span>🔠 Uppercase (A-Z)</span>
+            </label>
+            <label class="option-row">
+                <input type="checkbox" id="includeLowercase" checked>
+                <span>🔡 Lowercase (a-z)</span>
+            </label>
+            <label class="option-row">
+                <input type="checkbox" id="includeNumbers" checked>
+                <span>🔢 Numbers (0-9)</span>
+            </label>
+            <label class="option-row">
+                <input type="checkbox" id="includeSymbols" checked>
+                <span>✨ Symbols (!@#$%^&*)</span>
+            </label>
+        </div>
+
+        <button class="generate-button" id="makePasswordBtn">
+            ⚡ Generate Password
+        </button>
+
+    </div>
+
+    <div class="toast-msg" id="popupMsg">Copied!</div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
