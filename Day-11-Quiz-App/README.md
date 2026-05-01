@@ -1,53 +1,65 @@
-# 📝 Day 11: Quiz App with Timer & Score Tracking
+# 📝 Day 11: CodeQuiz App with Timer & Score Tracking
 
 ## 📝 Description
-An interactive quiz application that tests users with multiple-choice questions. Features include a countdown timer, score tracking, question navigation, and detailed results with explanations.
+CodeQuiz is an interactive quiz application that tests users' knowledge of HTML, CSS, and JavaScript. Features include personalized user entry, a 30-second countdown timer per question, real-time score tracking, 2x2 grid options layout, and detailed results with personalized feedback.
 
 ## ✨ Features
-- **Multiple Choice Questions** - 10 tech-themed questions
-- **Countdown Timer** - 15 seconds per question
-- **Score Tracking** - Real-time score calculation
-- **Question Counter** - Shows current question number
-- **Next/Previous Navigation** - Move between questions
-- **Results Screen** - Final score with percentage
-- **Answers Review** - See correct/incorrect answers with explanations
-- **Restart Option** - Play again without page reload
-- **Progress Bar** - Visual progress indicator
-- **Auto-next on Answer** - Automatically moves to next question
-- **Timer Auto-submit** - Auto-submits when time runs out
-- **Responsive Design** - Works on all devices
+- **Personalized Quiz** - User enters name before starting
+- **10 Tech Questions** - HTML, CSS, and JavaScript topics
+- **30-Second Timer** - Countdown timer for each question
+- **Auto-Submit on Timeout** - Automatically shows correct answer when time runs out
+- **2x2 Grid Options** - Clean grid layout for answer choices
+- **Instant Feedback** - Green (correct) / Red (wrong) visual feedback
+- **Score Tracking** - Real-time score updates
+- **Question Progress** - Shows current question number
+- **Personalized Results** - Name-specific feedback messages
+- **Play Again Option** - Restart quiz without page reload
+- **Enter Key Support** - Submit name with Enter key
+- **Responsive Design** - Stacked layout on mobile (1 column)
+- **Paper Texture Background** - Unique vintage aesthetic
+- **Smooth Animations** - Fade-in slide effects for options
 
 ## 🛠 Tech Used
 - HTML5
-- CSS3 (Flexbox, Grid, Gradients, Animations)
+- CSS3 (CSS Grid, Flexbox, Animations, Keyframes)
 - JavaScript (ES6+)
-- Google Fonts (Poppins)
-- Font Awesome 6
+- Google Fonts (Inter)
 
+## 🚀 Live Demo
+[Add Netlify/Vercel link after deployment]
+
+## 📸 Screenshot
+![CodeQuiz App](./screenshot.png)
+
+## 🧠 Flow Planning
+See [flow.md](./flow.md)
 
 ## 📋 Question Bank (10 Questions)
 
-| # | Question | Options | Correct Answer |
-|---|----------|---------|----------------|
-| 1 | What does HTML stand for? | 4 options | Hyper Text Markup Language |
-| 2 | Which CSS property changes text color? | 4 options | color |
-| 3 | What does CSS stand for? | 4 options | Cascading Style Sheets |
-| 4 | Which JavaScript keyword declares a variable? | 4 options | var/let/const (all correct) |
-| 5 | Which HTML tag creates a hyperlink? | 4 options | `<a>` |
-| 6 | Which built-in method adds elements to array end? | 4 options | push() |
-| 7 | Which CSS property makes text bold? | 4 options | font-weight |
-| 8 | What does DOM stand for? | 4 options | Document Object Model |
-| 9 | Which symbol is used for single-line comments in JS? | 4 options | // |
-| 10 | Which HTML tag displays an image? | 4 options | `<img>` |
+| # | Question | Correct Answer |
+|---|----------|----------------|
+| 1 | What does HTML stand for? | Hyper Text Markup Language |
+| 2 | Which CSS property changes text color? | color |
+| 3 | Which keyword declares a variable in JS? | All of the above |
+| 4 | What does CSS stand for? | Cascading Style Sheets |
+| 5 | Which HTML tag displays an image? | `<img>` |
+| 6 | Which CSS property adds space INSIDE an element? | padding |
+| 7 | Correct way to write a JS function? | function myFunc() {} |
+| 8 | Which HTML attribute defines inline styles? | style |
+| 9 | Which method writes to console? | console.log() |
+| 10 | Which CSS unit is relative to root font-size? | rem |
 
 ## 🔄 How It Works
 
 ### Game Flow:
-1. User loads page → Question 1 appears with 15-second timer
-2. User selects an answer → Answer saved, auto-move to next
-3. Timer reaches zero → Auto-submit with no answer
-4. After last question → Results screen shows score
-5. User clicks "Restart Quiz" → Reset everything, start over
+1. User enters name → Click Start Quiz or press Enter
+2. Question appears with 30-second timer
+3. User selects an answer → Shows correct/wrong feedback
+4. Timer reaches zero → Auto-shows correct answer
+5. Click Next Question → Loads next question
+6. After 10 questions → Results screen shows score
+7. Personalized feedback message based on percentage
+8. Click Play Again → Restart from beginning
 
 ### Scoring System:
 - Each correct answer = +1 point
@@ -55,30 +67,48 @@ An interactive quiz application that tests users with multiple-choice questions.
 - Maximum score = 10
 - Percentage = (Score / 10) × 100
 
+### Feedback Messages:
+| Percentage | Message |
+|------------|---------|
+| 100% | Perfect! [Name], you're a coding master! 🏆 |
+| 70-99% | Great job, [Name]! You know your code well! 🎉 |
+| 50-69% | Good effort, [Name]! Keep practicing! 👍 |
+| Below 50% | Keep learning, [Name]! Review and try again! 💪 |
+
 ## 🎨 UI Features
 
 | Feature | Description |
 |---------|-------------|
-| Gradient Background | Purple to Blue gradient |
-| Glassmorphism Card | Blur effect on quiz container |
-| Progress Bar | Fills as user progresses |
-| Timer Animation | Countdown with color change |
-| Option Hover | Smooth scale effect |
-| Correct/Incorrect Review | Green/Red indicators in results |
+| Paper Texture | Radial gradient dot pattern background |
+| 2x2 Grid Options | Clean grid layout for answer choices |
+| Timer Display | Large centered number (52px) |
+| Correct Answer | Green background (#d4e2d0) + ✓ icon |
+| Wrong Answer | Red background (#e8cfcf) + ✗ icon |
+| Option Hover | Lift effect with shadow |
+| Smooth Animations | Fade-slide entrance for options |
+| Responsive | 1 column grid on mobile |
 
 ## 🚧 Challenges Faced
-- **Timer Management** - Clearing intervals between questions
-- **Auto-next Logic** - Moving to next question after answer selection
-- **Timer + User Answer Race** - Ensuring timer doesn't override user selection
-- **State Management** - Tracking answers and visited questions
-- **Results Calculation** - Comparing user answers with correct answers
-- **Restart Functionality** - Resetting all variables and UI
-- **Progress Bar Sync** - Updating progress with question navigation
+- **Timer Management** - Properly clearing intervals between questions to prevent multiple timers running simultaneously
+- **Auto-submit on Timeout** - Showing correct answer and enabling Next button when timer hits zero without user selection
+- **State Management** - Preventing double answers (user can't answer after timeout or after already answering)
+- **2x2 Grid Layout** - Making options display in 2 columns on desktop, 1 column on mobile
+- **Answer Locking** - Disabling all options after selection to prevent changes
+- **Visual Feedback** - Adding correct/wrong classes without messing up grid layout
+- **Play Again Reset** - Resetting all variables (score, currentQ, answered flag, timer)
 
 ## 💡 Key Learning
-- **setInterval/setTimeout** needs careful cleanup with clearInterval
-- **State management** is crucial for multi-step applications
-- **Visual feedback** (progress bar, timer color) improves UX
-- **Auto-submit on timer** prevents stuck states
-- **Object arrays** are perfect for storing question banks
-- **Review screen** helps users learn from mistakes
+- **clearInterval()** is crucial - always clean up intervals before starting new ones
+- **State flags** (answered boolean) prevent race conditions between timer and user clicks
+- **CSS Grid with `grid-template-columns: 1fr 1fr`** creates perfect 2x2 layouts
+- **Personalized feedback** makes the app feel more engaging
+- **Animation delays** (`animation-delay`) create staggered entrance effects
+- **Timer auto-submit** is essential for fair quiz completion
+- **Visual feedback** (green/red) helps users learn immediately
+
+## 📂 GitHub Repo
+[Main Repository Link]
+
+## 🙏 Credit
+Guidance: @Keyur Gohil  
+Learning at: Red & White Skill Education
