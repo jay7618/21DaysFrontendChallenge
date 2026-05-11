@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+
+<div class="dashboard-wrap">
+    <!-- sidebar -->
+    <div class="side-nav" id="sidebar">
+        <div class="logo-area">
+            <h2><i class="ri-dashboard-line"></i> MyDash</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" data-page="dashboard" class="active"><i class="ri-home-4-line"></i> Dashboard</a></li>
+            <li><a href="#" data-page="orders"><i class="ri-shopping-cart-line"></i> Orders</a></li>
+            <li><a href="#" data-page="settings"><i class="ri-settings-3-line"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- main content -->
+    <div class="content-area">
+        <!-- dashboard page -->
+        <div id="dashboardPage" class="page">
+            <div class="top-bar">
+                <div class="page-name">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="user-box">
+                    <span>Hi, John</span>
+                    <div class="avatar">JD</div>
+                </div>
+            </div>
+
+            <!-- stats cards -->
+            <div class="cards-grid">
+                <div class="stat-card">
+                    <div class="card-icon"><i class="ri-money-dollar-circle-line"></i></div>
+                    <div class="card-value" id="revenueNum">$48,295</div>
+                    <div class="card-label">Total Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon"><i class="ri-shopping-bag-line"></i></div>
+                    <div class="card-value" id="ordersNum">1,284</div>
+                    <div class="card-label">Total Orders</div>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon"><i class="ri-group-line"></i></div>
+                    <div class="card-value" id="usersNum">3,592</div>
+                    <div class="card-label">Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon"><i class="ri-star-line"></i></div>
+                    <div class="card-value" id="ratingNum">4.8</div>
+                    <div class="card-label">Avg Rating</div>
+                </div>
+            </div>
+
+            <!-- charts and activity -->
+            <div class="two-columns">
+                <div class="info-box">
+                    <div class="box-title"><i class="ri-bar-chart-2-line"></i> Weekly Sales</div>
+                    <div class="chart-bars" id="barChart">
+                        <!-- bars will go here -->
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="box-title"><i class="ri-history-line"></i> Recent Activity</div>
+                    <ul class="activity-list" id="activityFeed">
+                        <!-- activities will go here -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- recent orders table -->
+            <div class="table-box">
+                <div class="box-title"><i class="ri-receipt-line"></i> Recent Orders</div>
+                <table class="orders-table">
+                    <thead>
+                        <tr><th>Order ID</th><th>Customer</th><th>Amount</th><th>Status</th></tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- order rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- orders page -->
+        <div id="ordersPage" class="page hidden">
+            <div class="top-bar">
+                <div class="page-name"><h2>All Orders</h2></div>
+                <div class="user-box"><span>Hi, John</span><div class="avatar">JD</div></div>
+            </div>
+            <div class="table-box">
+                <table class="orders-table">
+                    <thead><tr><th>Order ID</th><th>Customer</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+                    <tbody id="allOrdersBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- settings page -->
+        <div id="settingsPage" class="page hidden">
+            <div class="top-bar">
+                <div class="page-name"><h2>Settings</h2></div>
+                <div class="user-box"><span>Hi, John</span><div class="avatar">JD</div></div>
+            </div>
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label>Full Name</label>
+                    <input type="text" id="userName" value="John Doe">
+                </div>
+                <div class="setting-group">
+                    <label>Email Address</label>
+                    <input type="email" id="userEmail" value="john@example.com">
+                </div>
+                <div class="setting-group">
+                    <label>Notification Preference</label>
+                    <input type="text" id="userNotify" value="Email + SMS">
+                </div>
+                <button class="save-btn" id="saveSettingsBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
