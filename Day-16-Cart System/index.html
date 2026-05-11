@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart System | Shopping Cart</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛒 Shopping Cart System</h1>
+        <p class="sub">Add products • Manage quantity • See total price</p>
+
+        <div class="products-section">
+            <div class="section-title">📦 Products</div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+
+        <div class="cart-section">
+            <div class="cart-header">
+                <h2>🛍️ Your Cart</h2>
+                <button class="clear-btn" onclick="clearCart()">Clear All</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">Your cart is empty</div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="total-row">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Added to cart!</div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
