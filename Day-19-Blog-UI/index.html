@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSpace | Read amazing stories</title>
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="blog-header">
+    <h1><i class="ri-pen-nib-line"></i> BlogSpace</h1>
+    <p>Stories, ideas, and insights from creative minds around the world</p>
+</header>
+
+<div class="container">
+    <!-- filter buttons -->
+    <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="tech">💻 Tech</button>
+        <button class="filter-btn" data-cat="design">🎨 Design</button>
+        <button class="filter-btn" data-cat="lifestyle">🌿 Lifestyle</button>
+        <button class="filter-btn" data-cat="coding">⚡ Coding</button>
+    </div>
+
+    <!-- blog posts grid -->
+    <div class="blog-grid" id="blogGrid">
+        <!-- posts will be added here -->
+    </div>
+</div>
+
+<!-- single post modal -->
+<div class="modal-overlay" id="postModal">
+    <div class="post-modal">
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+        <div class="modal-content" id="modalContent">
+            <!-- dynamic content -->
+        </div>
+    </div>
+</div>
+
+    <script src="./script.js"></script>
+</body> 
+</html>
