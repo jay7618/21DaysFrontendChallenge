@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthFlow | Login & Signup</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" id="loginTab">Login</button>
+            <button class="toggle-btn" id="signupTab">Sign Up</button>
+        </div>
+
+        <div id="loginForm" class="form-card">
+            <h2>Welcome Back</h2>
+            <p class="subtext">Login to your account</p>
+            
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email">
+                <span class="error-msg" id="loginEmailError"></span>
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password">
+                <span class="error-msg" id="loginPasswordError"></span>
+            </div>
+            
+            <button class="submit-btn" onclick="handleLogin()">Login</button>
+            
+            <div class="switch-text">
+                Don't have an account? 
+                <span class="switch-link" onclick="switchToSignup()">Sign Up</span>
+            </div>
+
+        </div>
+
+        <div id="signupForm" class="form-card hidden">
+            <h2>Create Account</h2>
+            <p class="subtext">Sign up to get started</p>
+            
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="signupName" placeholder="Enter your full name">
+                <span class="error-msg" id="signupNameError"></span>
+            </div>
+            
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="signupEmail" placeholder="Enter your email">
+                <span class="error-msg" id="signupEmailError"></span>
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="signupPassword" placeholder="Create a password (min 6 characters)">
+                <span class="error-msg" id="signupPasswordError"></span>
+            </div>
+            
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" id="signupConfirm" placeholder="Confirm your password">
+                <span class="error-msg" id="signupConfirmError"></span>
+            </div>
+            
+            <button class="submit-btn" onclick="handleSignup()">Sign Up</button>
+            
+            <div class="switch-text">
+                Already have an account? 
+                <span class="switch-link" onclick="switchToLogin()">Login</span>
+            </div>
+        </div>
+    </div>
+
+<script src="./script.js"></script>
+</body>
+</html>
